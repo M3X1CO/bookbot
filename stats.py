@@ -12,3 +12,14 @@ def get_letter_count(verse):
             char_count[char] = 1
     return char_count
 
+def get_sorted(char_count):
+    char_list = []
+
+    for char, count in char_count.items():
+        if char.isalpha():
+            char_list.append({"char": char, "num": count})
+
+    char_list.sort(reverse=True, key= lambda x: x["num"])
+    
+    return char_list
+
